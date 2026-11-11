@@ -1,0 +1,44 @@
+{
+  "name": "lab5-1-ejercicio4-crud-ci",
+  "version": "1.0.0",
+  "description": "API REST de Gestión de Productos con CI en GitHub Actions",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "keywords": [
+    "express",
+    "crud",
+    "jest",
+    "ci-cd",
+    "github-actions"
+  ],
+  "author": "Adrian Ovando",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "eslint": "^9.21.0",
+    "globals": "^16.0.0",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/server.js"
+    ],
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ]
+  }
+}
