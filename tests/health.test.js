@@ -18,4 +18,8 @@ describe("Health Check y Rutas Base", () => {
     expect(res.body).toHaveProperty("success", false);
     expect(res.body).toHaveProperty("message", "Ruta no encontrada");
   });
+
+  test("Prueba intencional que debe fallar para demostracion de CI", () => {
+    expect(true).toBe(false);
+  });
 });
