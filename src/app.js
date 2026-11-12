@@ -15,6 +15,8 @@ app.get("/health", (req, res) => {
   });
 });
 
+sfaf
+
 // Rutas de la API
 app.use("/api/products", productRoutes);
 
