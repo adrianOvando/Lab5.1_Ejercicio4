@@ -38,6 +38,18 @@ describe("API de Productos (/api/products)", () => {
     });
   });
 
+  describe("GET /api/products/categories", () => {
+    test("debe retornar la lista de categorías únicas", async () => {
+      const res = await request(app).get("/api/products/categories");
+
+      expect(res.statusCode).toBe(200);
+      expect(res.body.success).toBe(true);
+      expect(Array.isArray(res.body.data)).toBe(true);
+      expect(res.body.data).toContain("computacion");
+      expect(res.body.data).toContain("accesorios");
+    });
+  });
+
   describe("GET /api/products/:id", () => {
     test("debe retornar un producto específico cuando el ID existe", async () => {
       const res = await request(app).get("/api/products/1");

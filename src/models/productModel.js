@@ -61,6 +61,11 @@ const ProductModel = {
     return products.find((p) => p.id === numericId) || null;
   },
 
+  getCategories: () => {
+    const categories = new Set(products.map((p) => p.category));
+    return Array.from(categories);
+  },
+
   create: (data) => {
     const newProduct = {
       id: nextId++,

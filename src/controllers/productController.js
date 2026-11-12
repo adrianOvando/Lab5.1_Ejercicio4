@@ -11,6 +11,14 @@ const ProductController = {
     });
   },
 
+  getCategories: (req, res) => {
+    const categories = ProductModel.getCategories();
+    return res.status(200).json({
+      success: true,
+      data: categories
+    });
+  },
+
   getById: (req, res) => {
     const { id } = req.params;
     const numericId = parseInt(id, 10);
